@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridStudies - Your Grid Computing Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3498db',
+                        dark: '#384046',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-dark fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="text-2xl font-bold text-white">GridStudies</a>
+                <div class="md:flex hidden">
+                    <a href="#home" class="text-white px-4 py-2 hover:text-primary transition-all">Home</a>
+                    <a href="#about" class="text-white px-4 py-2 hover:text-primary transition-all">About</a>
+                    <a href="#services" class="text-white px-4 py-2 hover:text-primary transition-all">Services</a>
+                    <a href="#contact" class="text-white px-4 py-2 hover:text-primary transition-all">Contact</a>
+                    <a href="#helpdesk" class="text-white px-4 py-2 hover:text-primary transition-all">Help Desk</a>
+                    <a href="#support" class="text-white px-4 py-2 hover:text-primary transition-all">Support</a>
+                </div>
+                <button class="md:hidden text-white" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark w-full">
+            <a href="#home" class="block text-white px-4 py-2 hover:bg-primary">Home</a>
+            <a href="#about" class="block text-white px-4 py-2 hover:bg-primary">About</a>
+            <a href="#services" class="block text-white px-4 py-2 hover:bg-primary">Services</a>
+            <a href="#contact" class="block text-white px-4 py-2 hover:bg-primary">Contact</a>
+            <a href="#helpdesk" class="block text-white px-4 py-2 hover:bg-primary">Help Desk</a>
+            <a href="#support" class="block text-white px-4 py-2 hover:bg-primary">Support</a>
+        </div>
+    </nav>
+
+    <!-- Help Desk Section -->
+    <section id="helpdesk" class="pt-24 pb-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-dark text-center mb-8">Help Desk</h2>
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+                <form id="uploadForm" class="space-y-4">
+                    <div>
+                        <label class="block text-dark mb-2">Upload Data</label>
+                        <input type="file" class="w-full p-2 border rounded" multiple>
+                    </div>
+                    <div>
+                        <label class="block text-dark mb-2">Description</label>
+                        <textarea class="w-full p-2 border rounded" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-600 transition-all">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-dark text-center mb-8">Support</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Support Team</h3>
+                    <p><i class="bi bi-telephone-fill text-primary"></i> +1 (555) 123-4567</p>
+                    <p><i class="bi bi-envelope-fill text-primary"></i> support@gridstudies.com</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Technical Support</h3>
+                    <p><i class="bi bi-telephone-fill text-primary"></i> +1 (555) 987-6543</p>
+                    <p><i class="bi bi-envelope-fill text-primary"></i> tech@gridstudies.com</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="https://wa.me/1234567890" target="_blank" class="inline-block">
+                    <i class="bi bi-whatsapp text-4xl text-green-500 hover:text-green-600 transition-all"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-dark text-center mb-8">Contact Us</h2>
+            <div class="max-w-3xl mx-auto">
+                <form id="contactForm" class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-dark mb-2">Name</label>
+                        <input type="text" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div>
+                        <label class="block text-dark mb-2">Email</label>
+                        <input type="email" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-dark mb-2">Subject</label>
+                        <input type="text" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-dark mb-2">Message</label>
+                        <textarea class="w-full p-2 border rounded" rows="6" required></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded hover:bg-blue-600 transition-all">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Form submissions
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Request submitted successfully!');
+            this.reset();
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent successfully!');
+            this.reset();
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
